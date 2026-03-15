@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import CodeBlock from '../CodeBlock.vue';
-import Slide from '../Slide.vue';
-import Step from '../Step.vue';
+import CodeBlock from '../CodeBlock.vue'
+import Slide from '../Slide.vue'
+import Step from '../Step.vue'
 
 const code = `
 @project = Project.find(params[:project_id])
 @site.projects << @project if defined?(@site)
     && defined?(@project)
     && !@site.projects.include?(@project)
-`;
+`
 </script>
 
 <template>

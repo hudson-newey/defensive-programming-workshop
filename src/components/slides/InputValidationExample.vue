@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import CodeBlock from '../CodeBlock.vue';
-import Slide from '../Slide.vue';
-import Step from '../Step.vue';
+import CodeBlock from '../CodeBlock.vue'
+import Slide from '../Slide.vue'
+import Step from '../Step.vue'
 
 // Example of code that is vulnerable to SQL injection.
 const vulnerableSqlCode = `

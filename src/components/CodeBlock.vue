@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import VCodeBlock from '@wdns/vue-code-block';
+import VCodeBlock from '@wdns/vue-code-block'
 
 defineProps({
     code: {

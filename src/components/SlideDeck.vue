@@ -1,33 +1,33 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue';
-import { EventKeys } from '../constants/eventKeys';
+import { computed, onMounted, ref } from 'vue'
+import { EventKeys } from '../constants/eventKeys'
 
 // Intro
-import TitleSlide from './slides/TitleSlide.vue';
-import IntroSlide from './slides/Intro.vue';
-import AntiIntroSlide from './slides/AntiIntro.vue';
+import TitleSlide from './slides/TitleSlide.vue'
+import IntroSlide from './slides/Intro.vue'
+import AntiIntroSlide from './slides/AntiIntro.vue'
 
 // Validation
-import AssumptionsValidationSlide from './slides/AssumptionsValidation.vue';
-import InputValidationExample from './slides/InputValidationExample.vue';
-import InputOutputPractical from './practical/InputValidationPractical.vue';
-import InputValidationSolution from './slides/InputValidationSolution.vue';
+import AssumptionsValidationSlide from './slides/AssumptionsValidation.vue'
+import InputValidationExample from './slides/InputValidationExample.vue'
+import InputOutputPractical from './practical/InputValidationPractical.vue'
+import InputValidationSolution from './slides/InputValidationSolution.vue'
 
 // "Users" are relative
-import UsersAreRelativeSlide from './slides/UsersAreRelative.vue';
-import DeveloperInput from './slides/DeveloperInput.vue';
-import DeveloperInputExample from './slides/DeveloperInputExample.vue';
-import DeveloperInputPractical from './practical/DeveloperInputPractical.vue';
+import UsersAreRelativeSlide from './slides/UsersAreRelative.vue'
+import DeveloperInput from './slides/DeveloperInput.vue'
+import DeveloperInputExample from './slides/DeveloperInputExample.vue'
+import DeveloperInputPractical from './practical/DeveloperInputPractical.vue'
 
 // Side effects
-import AssumptionsSideEffectsSlide from './slides/AssumptionsSideEffects.vue';
-import SideEffectsExample from './slides/SideEffectsExample.vue';
-import DefensiveCopyingSlide from './slides/DefensiveCopying.vue';
-import ImmutabilitySlide from './slides/Immutability.vue';
-import GettersPractical from './practical/GettersPractical.vue';
-import InternalMutationPractical from './practical/InternalMutation.vue';
+import AssumptionsSideEffectsSlide from './slides/AssumptionsSideEffects.vue'
+import SideEffectsExample from './slides/SideEffectsExample.vue'
+import DefensiveCopyingSlide from './slides/DefensiveCopying.vue'
+import ImmutabilitySlide from './slides/Immutability.vue'
+import GettersPractical from './practical/GettersPractical.vue'
+import InternalMutationPractical from './practical/InternalMutation.vue'
 
-import endSlide from './slides/EndSlide.vue';
+import endSlide from './slides/EndSlide.vue'
 
 const slides = [
     TitleSlide,

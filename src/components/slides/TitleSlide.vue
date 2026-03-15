@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import Slide from '../Slide.vue';
-
-import CodeBlock from '../CodeBlock.vue';
-import Image from '../Image.vue';
+import Slide from '../Slide.vue'
+import CodeBlock from '../CodeBlock.vue'
+import Image from '../Image.vue'
 
 const cloneRepoCommand = `
 $ git clone https://github.com/hudson-newey/defensive-exercises.git
 >
-`;
+`
 </script>
 
 <template>

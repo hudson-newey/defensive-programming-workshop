@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import CodeBlock from '../CodeBlock.vue';
-import Slide from '../Slide.vue';
+import CodeBlock from '../CodeBlock.vue'
+import Slide from '../Slide.vue'
 
 const code = `
 public class StudentVulnerable {

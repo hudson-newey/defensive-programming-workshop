@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import CodeBlock from '../CodeBlock.vue';
-import Slide from '../Slide.vue';
+import CodeBlock from '../CodeBlock.vue'
+import Slide from '../Slide.vue'
 
 const code = `
 URL yahoo = new URL("http://www.yahoo.com/");
@@ -13,7 +13,7 @@ String inputLine;
 while ((inputLine = in.readLine()) != null) 
     System.out.println(inputLine);
 in.close();
-`;
+`
 </script>
 
 <template>

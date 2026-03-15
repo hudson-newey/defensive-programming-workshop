@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref, type Ref } from 'vue'
 import { CodeEditor } from 'monaco-editor-vue3'
 import { runCode } from '../utils/runCode'
-import type { Ref } from 'vue';
 
 const { code, inputs, solution } = defineProps({
   code: {

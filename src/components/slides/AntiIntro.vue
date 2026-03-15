@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import CodeBlock from '../CodeBlock.vue';
-import Image from '../Image.vue';
-import Slide from '../Slide.vue';
-import Step from '../Step.vue';
+import CodeBlock from '../CodeBlock.vue'
+import Image from '../Image.vue'
+import Slide from '../Slide.vue'
+import Step from '../Step.vue'
 
 const tryCatchCode = `
 try {
@@ -11,7 +11,7 @@ try {
     // There may not be an IO device connected to print to.
     panic("Unexpected error: " + e.getMessage());
 }
-`;
+`
 
 const defaultValueCode = `
 function getUserName(user) {

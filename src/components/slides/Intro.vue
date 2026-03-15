@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Slide from '../Slide.vue';
-import Step from '../Step.vue';
+import Slide from '../Slide.vue'
+import Step from '../Step.vue'
 </script>
 
 <template>

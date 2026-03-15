@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import CodeBlock from '../CodeBlock.vue';
-import Slide from '../Slide.vue';
-import Step from '../Step.vue';
+import CodeBlock from '../CodeBlock.vue'
+import Slide from '../Slide.vue'
+import Step from '../Step.vue'
 
 const solution = `
 Scanner reader = new Scanner(System.in);
@@ -16,7 +16,7 @@ if (reader.hasNextInt()) {
 }
 
 reader.close();
-`;
+`
 </script>
 
 <template>

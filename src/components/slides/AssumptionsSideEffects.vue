@@ -12,8 +12,10 @@ public class User {
 
 <template>
     <Slide :title="'Assumption 3: Side Effects'">
-        <h2>
-            <CodeBlock :code="code" />
-        </h2>
+        <CodeBlock :code="code" />
     </Slide>
 </template>
+
+
+
+

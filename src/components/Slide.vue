@@ -15,7 +15,7 @@ defineProps({
             </div>
         </section>
 
-        <div class="slide-content">
+        <div class="slide-content content">
             <slot />
         </div>
     </div>

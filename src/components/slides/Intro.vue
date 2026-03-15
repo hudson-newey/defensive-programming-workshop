@@ -4,10 +4,10 @@ import Slide from '../Slide.vue';
 
 <template>
     <Slide :title="'What is Defensive Programming'">
-        <h3 class="is-size-4">What Assumptions Have I Made?</h3>
-        <ol class="ml-5">
+        <ol>
             <li>Can these assumptions ever change</li>
             <li>What should happen if these assumptions are violated</li>
+            <li>Is there a way that I can track assumptions violations (not covered)</li>
         </ol>
     </Slide>
 </template>

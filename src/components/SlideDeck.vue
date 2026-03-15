@@ -1,19 +1,30 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue';
+import { EventKeys } from '../constants/eventKeys';
 
-import Slide1 from './slides/1Slide.vue';
-import Slide2 from './slides/2Slide.vue';
-import Slide3 from './slides/3Slide.vue';
-import Slide4 from './slides/4Slide.vue';
-import Slide5 from './slides/5Slide.vue';
-import endSlide from './slides/endSlide.vue';
+import TitleSlide from './slides/TitleSlide.vue';
+import IntroSlide from './slides/Intro.vue';
+import AntiIntroSlide from './slides/AntiIntro.vue';
+import AssumptionsValidationSlide from './slides/AssumptionsValidation.vue';
+import AssumptionsEnvironmentalSlide from './slides/AssumptionsEnvironmental.vue';
+import AssumptionsSideEffectsSlide from './slides/AssumptionsSideEffects.vue';
+import DefensiveCopyingSlide from './slides/DefensiveCopying.vue';
+
+import PracticalIntro from './slides/PracticalIntro.vue';
+
+import endSlide from './slides/EndSlide.vue';
 
 const slides = [
-    Slide1,
-    Slide2,
-    Slide3,
-    Slide4,
-    Slide5,
+    TitleSlide,
+    IntroSlide,
+    AntiIntroSlide,
+    AssumptionsValidationSlide,
+    AssumptionsEnvironmentalSlide,
+    AssumptionsSideEffectsSlide,
+    DefensiveCopyingSlide,
+
+    PracticalIntro,
+
     endSlide,
 ]
 
@@ -24,10 +35,10 @@ const progressPercentage = computed(() => {
 
 onMounted(() => {
     document.addEventListener('keydown', (event) => {
-        if (event.key === 'ArrowRight') {
+        if (event.key === EventKeys.RightArrow || event.key === EventKeys.Space) {
             if (currentSlide.value >= slides.length - 1) return;
             currentSlide.value = (currentSlide.value + 1)
-        } else if (event.key === 'ArrowLeft') {
+        } else if (event.key === EventKeys.LeftArrow) {
             if (currentSlide.value === 0) return;
             currentSlide.value = (currentSlide.value - 1)
         }
@@ -46,12 +57,12 @@ onMounted(() => {
     .slide-container {
         display: flex;
         flex-direction: column;
-        height: 100dvh;
+        min-height: 100dvh;
     }
 
     .presentation-progress {
         margin-top: auto;
-        margin-bottom: 1rem;
+        margin-block: 1.5rem;
         width: 70%;
         height: 6px !important;
         align-self: center;

@@ -2,9 +2,10 @@
 import Slide from '../Slide.vue';
 
 import CodeBlock from '../CodeBlock.vue';
+import Image from '../Image.vue';
 
 const cloneRepoCommand = `
-$ git clone https://github.com/defensive-programming-workshop/practical-exercise.git
+$ git clone https://github.com/hudson-newey/defensive-exercises.git
 >
 `;
 </script>
@@ -25,5 +26,7 @@ $ git clone https://github.com/defensive-programming-workshop/practical-exercise
 
             <CodeBlock :lang="'bash'" :code="cloneRepoCommand" />
         </section>
+
+        <Image src="/bubble-wrapped.webp" :width="400" :height="400" />
     </Slide>
 </template>

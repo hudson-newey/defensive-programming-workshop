@@ -9,6 +9,7 @@ import AntiIntroSlide from './slides/AntiIntro.vue';
 
 // Validation
 import AssumptionsValidationSlide from './slides/AssumptionsValidation.vue';
+import InputValidationExample from './slides/InputValidationExample.vue';
 import InputOutputPractical from './practical/InputValidationPractical.vue';
 import InputValidationSolution from './slides/InputValidationSolution.vue';
 
@@ -29,6 +30,7 @@ const slides = [
     AntiIntroSlide,
 
     AssumptionsValidationSlide,
+    InputValidationExample,
     InputOutputPractical,
     InputValidationSolution,
 

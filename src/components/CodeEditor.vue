@@ -48,6 +48,10 @@ function checkCode() {
     })
 }
 
+function resetCode() {
+  editedCode.value = code.trimStart()
+}
+
 onMounted(() => {
   window.addEventListener('keyup', keyupListener)
 });
@@ -69,7 +73,7 @@ onUnmounted(() => {
     <button class="button is-primary is-small" @click="checkCode" :disabled="isSubmitting">
       {{ isSubmitting ? 'Submitting...' : 'Check' }}
     </button>
-    <button class="button is-small ml-2">Reset</button>
+    <button class="button is-small ml-2" @click="resetCode">Reset</button>
   </div>
 
   <div class="modal" :class="{ 'is-active': execOutput !== null }">

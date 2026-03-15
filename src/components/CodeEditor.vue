@@ -1,14 +1,19 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import { CodeEditor } from 'monaco-editor-vue3'
 import { runCode } from '../utils/runCode'
 import type { Ref } from 'vue';
 
-const { code } = defineProps({
+const { code, inputs } = defineProps({
   code: {
     type: String,
     required: true
   },
+  inputs: {
+    type: Array as () => string[],
+    required: false,
+    default: () => []
+  }
 })
 
 const editorOptions = {
@@ -17,12 +22,21 @@ const editorOptions = {
   automaticLayout: true
 }
 
+const editedCode = ref(code.trimStart())
 const execOutput: Ref<string | null> = ref(null)
 const isSubmitting = ref(false)
 
+let keyupListener = (event: KeyboardEvent) => {
+  if (event.key === 'Enter' && (event.ctrlKey || event.metaKey)) {
+    checkCode()
+  } else if (event.key === 'Escape') {
+    execOutput.value = null
+  }
+}
+
 function checkCode() {
   isSubmitting.value = true
-  runCode(code, '42aa\n')
+  runCode(editedCode.value, inputs.join('\n') + '\n')
     .then((response) => {
       execOutput.value = response.output
     })
@@ -33,10 +47,23 @@ function checkCode() {
       isSubmitting.value = false
     })
 }
+
+onMounted(() => {
+  window.addEventListener('keyup', keyupListener)
+});
+
+onUnmounted(() => {
+  window.removeEventListener('keyup', keyupListener)
+});
 </script>
 
 <template>
-  <CodeEditor :value="code.trimStart()" language="java" theme="vs-dark" :options="editorOptions" />
+  <CodeEditor
+    v-model:value="editedCode"
+    language="java"
+    theme="vs-dark"
+    :options="editorOptions"
+  />
 
   <div class="mt-2">
     <button class="button is-primary is-small" @click="checkCode" :disabled="isSubmitting">

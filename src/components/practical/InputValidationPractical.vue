@@ -22,6 +22,6 @@ class Main {
 
 <template>
     <Slide :title="'Practical: Input Validation'">
-        <CodeEditor :code="code" />
+        <CodeEditor :code="code" :inputs="['not a number', '42']" />
     </Slide>
 </template>

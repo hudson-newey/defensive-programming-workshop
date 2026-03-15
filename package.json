@@ -12,11 +12,15 @@
     "@chenfengyuan/vue-qrcode": "^2.0.0",
     "@wdns/vue-code-block": "^2.3.5",
     "buefy": "^3.0.4",
+    "got": "^14.6.6",
     "highlight.js": "^11.11.1",
     "monaco-editor": "^0.55.1",
     "monaco-editor-vue3": "^1.0.5",
     "qrcode": "^1.5.4",
-    "vue": "^3.5.30"
+    "tio.js": "^4.1.0",
+    "vite-plugin-node-polyfills": "^0.25.0",
+    "vue": "^3.5.30",
+    "zlib": "^1.0.5"
   },
   "devDependencies": {
     "@types/node": "^24.12.0",

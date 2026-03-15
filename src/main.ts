@@ -1,5 +1,15 @@
 import { createApp } from 'vue'
-import './style.css'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import VueQrcode from '@chenfengyuan/vue-qrcode'
+import Buefy from "buefy";
+
+import './style.css'
+import "buefy/dist/css/buefy.css";
+
+const app = createApp(App)
+app.mount('#app')
+
+app.use(Buefy)
+
+app.component('vue-qrcode', VueQrcode)

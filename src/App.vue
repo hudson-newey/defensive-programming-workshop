@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+    import SlideDeck from './components/SlideDeck.vue';
 </script>
 
 <template>
-  <HelloWorld />
+    <SlideDeck />
 </template>

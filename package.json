@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@chenfengyuan/vue-qrcode": "^2.0.0",
+    "@wdns/vue-code-block": "^2.3.5",
     "buefy": "^3.0.4",
+    "highlight.js": "^11.11.1",
     "qrcode": "^1.5.4",
     "vue": "^3.5.30"
   },

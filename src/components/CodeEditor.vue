@@ -4,10 +4,15 @@ import { CodeEditor } from 'monaco-editor-vue3'
 import { runCode } from '../utils/runCode'
 import type { Ref } from 'vue';
 
-const { code, inputs } = defineProps({
+const { code, inputs, solution } = defineProps({
   code: {
     type: String,
     required: true
+  },
+  solution: {
+    type: String,
+    required: false,
+    default: ''
   },
   inputs: {
     type: Array as () => string[],
@@ -52,6 +57,10 @@ function resetCode() {
   editedCode.value = code.trimStart()
 }
 
+function showSolution() {
+  editedCode.value = solution.trimStart()
+}
+
 onMounted(() => {
   window.addEventListener('keyup', keyupListener)
 });
@@ -73,6 +82,7 @@ onUnmounted(() => {
     <button class="button is-primary is-small" @click="checkCode" :disabled="isSubmitting">
       {{ isSubmitting ? 'Submitting...' : 'Check' }}
     </button>
+    <button class="button is-small ml-2" @click="showSolution" v-if="solution">Show Solution</button>
     <button class="button is-small ml-2" @click="resetCode">Reset</button>
   </div>
 
@@ -86,7 +96,7 @@ onUnmounted(() => {
       </section>
 
       <footer class="modal-card-foot p-2 pl-3">
-        <button class="button is-primary" @click="execOutput = null">Close</button>
+        <button class="button is-danger" @click="execOutput = null">Close</button>
       </footer>
     </div>
   </div>
@@ -99,5 +109,14 @@ onUnmounted(() => {
 
   border-radius: 0.5rem;
   contain: content;
+}
+
+.test-case-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  padding: 1rem;
 }
 </style>

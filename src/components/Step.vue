@@ -20,11 +20,14 @@ onMounted(() => {
         }
 
         if (event.key === EventKeys.LeftArrow) {
-            currentStep.value--;
+            if (currentStep.value > 0) {
+                event.stopPropagation();
+            }
+            currentStep.value = Math.max(0, currentStep.value - 1);
         }
 
         if (currentStep.value === step) {
-            event.stopImmediatePropagation();
+            event.stopPropagation();
         }
     };
 

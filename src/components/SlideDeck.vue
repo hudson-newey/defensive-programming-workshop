@@ -2,28 +2,40 @@
 import { computed, onMounted, ref } from 'vue';
 import { EventKeys } from '../constants/eventKeys';
 
+// Intro
 import TitleSlide from './slides/TitleSlide.vue';
 import IntroSlide from './slides/Intro.vue';
 import AntiIntroSlide from './slides/AntiIntro.vue';
-import AssumptionsValidationSlide from './slides/AssumptionsValidation.vue';
-import AssumptionsEnvironmentalSlide from './slides/AssumptionsEnvironmental.vue';
-import AssumptionsSideEffectsSlide from './slides/AssumptionsSideEffects.vue';
-import DefensiveCopyingSlide from './slides/DefensiveCopying.vue';
 
-import PracticalIntro from './slides/PracticalIntro.vue';
+// Validation
+import AssumptionsValidationSlide from './slides/AssumptionsValidation.vue';
+import InputOutputPractical from './practical/InputValidationPractical.vue';
+
+import AssumptionsEnvironmentalSlide from './slides/AssumptionsEnvironmental.vue';
+
+// Side effects
+import AssumptionsSideEffectsSlide from './slides/AssumptionsSideEffects.vue';
+import SideEffectsExample from './slides/SideEffectsExample.vue';
+import DefensiveCopyingSlide from './slides/DefensiveCopying.vue';
+import SideEffectPractical from './practical/SideEffectPractical.vue';
 
 import endSlide from './slides/EndSlide.vue';
 
 const slides = [
     TitleSlide,
+
     IntroSlide,
     AntiIntroSlide,
-    AssumptionsValidationSlide,
-    AssumptionsEnvironmentalSlide,
-    AssumptionsSideEffectsSlide,
-    DefensiveCopyingSlide,
 
-    PracticalIntro,
+    AssumptionsValidationSlide,
+    InputOutputPractical,
+
+    AssumptionsEnvironmentalSlide,
+
+    AssumptionsSideEffectsSlide,
+    SideEffectsExample,
+    DefensiveCopyingSlide,
+    SideEffectPractical,
 
     endSlide,
 ]

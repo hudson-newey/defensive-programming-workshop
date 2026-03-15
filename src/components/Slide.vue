@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="container">
+    <div class="content-container container">
         <section class="hero">
             <div class="hero-body">
                 <h2 class="title">{{ title }}</h2>
@@ -22,12 +22,17 @@ defineProps({
 </template>
 
 <style scoped>
-    .container {
-        margin-top: 3rem;
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
     }
 
     .slide-content {
-        color: white;
-        margin-left: 3rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        margin-inline: 3rem;
     }
 </style>

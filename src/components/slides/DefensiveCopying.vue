@@ -27,7 +27,7 @@ public class Checkout {
 </script>
 
 <template>
-    <Slide :title="'Fix 3a: Defensive Copying'">
+    <Slide :title="'Side Effects (Fix 3a): Defensive Copying'">
         <CodeBlock :code="code" />
     </Slide>
 </template>

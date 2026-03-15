@@ -7,6 +7,6 @@ const code = ``
 
 <template>
     <Slide :title="'Side Effects (Fix 3b): Immutable Classes'">
-        <CodeBlock />
+        <CodeBlock :code="code" />
     </Slide>
 </template>

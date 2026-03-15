@@ -17,6 +17,9 @@ importers:
       buefy:
         specifier: ^3.0.4
         version: 3.0.4(vue@3.5.30(typescript@5.9.3))
+      bulma-modal-fx:
+        specifier: ^1.1.1
+        version: 1.1.1
       got:
         specifier: ^14.6.6
         version: 14.6.6
@@ -380,6 +383,9 @@ packages:
 
   builtin-status-codes@3.0.0:
     resolution: {integrity: sha512-HpGFw18DgFWlncDfjTa2rcQ4W88O1mC8e8yZ2AvQY5KDaktSTwo+KRf6nHK6FRI5FyRyb/5T6+TSxfP7QyGsmQ==}
+
+  bulma-modal-fx@1.1.1:
+    resolution: {integrity: sha512-Ma1e/uczogPd0MzpeOsYJau1ocavO2wlnGg1ZVg+/mrsKyeasrdtyfbOH1kRdzqCH9DMrZAw7WEW0Oa3lKr6Fw==}
 
   bulma@1.0.4:
     resolution: {integrity: sha512-Ffb6YGXDiZYX3cqvSbHWqQ8+LkX6tVoTcZuVB3lm93sbAVXlO0D6QlOTMnV6g18gILpAXqkG2z9hf9z4hCjz2g==}
@@ -1535,6 +1541,8 @@ snapshots:
       ieee754: 1.2.1
 
   builtin-status-codes@3.0.0: {}
+
+  bulma-modal-fx@1.1.1: {}
 
   bulma@1.0.4: {}
 

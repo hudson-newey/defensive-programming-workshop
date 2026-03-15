@@ -2,6 +2,7 @@ import zlib from 'zlib';
 
 interface TioResponse {
     output: string;
+    exitCode?: number;
 }
 
 export async function runCode(code: string, inputs: string): Promise<TioResponse> {
@@ -38,9 +39,15 @@ async function run(code: string, language: string, options: Record<string, unkno
     }
     plain += 'R';
     const buf = zlib.deflateRawSync(plain);
+
     const request = await fetch(API_URL, { method: 'POST', body: buf });
     const body = await request.text();
+
     const splitter = body.substring(0, 16);
     const output = body.replaceAll(splitter, '\n');
-    return { output };
+
+    const exitCodeMatch = output.match(/Exit code: (\d+)/);
+    const exitCode = exitCodeMatch ? parseInt(exitCodeMatch[1], 10) : undefined;
+
+    return { output, exitCode };
 }

@@ -12,6 +12,7 @@
     "@chenfengyuan/vue-qrcode": "^2.0.0",
     "@wdns/vue-code-block": "^2.3.5",
     "buefy": "^3.0.4",
+    "bulma-modal-fx": "^1.1.1",
     "got": "^14.6.6",
     "highlight.js": "^11.11.1",
     "monaco-editor": "^0.55.1",

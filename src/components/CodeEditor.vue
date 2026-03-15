@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { CodeEditor } from 'monaco-editor-vue3'
 import { runCode } from '../utils/runCode'
 import type { Ref } from 'vue';
@@ -28,8 +28,18 @@ const editorOptions = {
 }
 
 const editedCode = ref(code.trimStart())
-const execOutput: Ref<string | null> = ref(null)
 const isSubmitting = ref(false)
+
+const execOutput: Ref<string | null> = ref(null)
+const execExitCode: Ref<number | null> = ref(null)
+
+const isSuccessful = computed(() => execExitCode.value === 0)
+const outputTitle = computed(() => {
+  if (execExitCode.value === null) {
+    return `Output`
+  }
+  return isSuccessful.value ? `Success!` : `Try Again!`
+})
 
 let keyupListener = (event: KeyboardEvent) => {
   if (event.key === 'Enter' && (event.ctrlKey || event.metaKey)) {
@@ -44,9 +54,11 @@ function checkCode() {
   runCode(editedCode.value, inputs.join('\n') + '\n')
     .then((response) => {
       execOutput.value = response.output
+      execExitCode.value = response.exitCode ?? null
     })
     .catch((error) => {
       execOutput.value = `Error: ${error.message}`
+      execExitCode.value = null
     })
     .finally(() => {
       isSubmitting.value = false
@@ -71,12 +83,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <CodeEditor
-    v-model:value="editedCode"
-    language="java"
-    theme="vs-dark"
-    :options="editorOptions"
-  />
+  <CodeEditor v-model:value="editedCode" language="java" theme="vs-dark" :options="editorOptions" />
 
   <div class="mt-2">
     <button class="button is-primary is-small" @click="checkCode" :disabled="isSubmitting">
@@ -86,17 +93,27 @@ onUnmounted(() => {
     <button class="button is-small ml-2" @click="resetCode">Reset</button>
   </div>
 
-  <div class="modal" :class="{ 'is-active': execOutput !== null }">
+  <div class="modal modal-fx-fadeInScale" :class="{ 'is-active': execOutput !== null }">
     <div class="modal-background"></div>
 
     <div class="modal-card">
       <section class="modal-card-body">
-        <p class="modal-card-title">Output</p>
+        <h4 class="modal-card-title" :class="{
+          'has-text-success': isSuccessful,
+          'has-text-danger': !isSuccessful,
+        }">
+          {{ outputTitle }}
+        </h4>
         <pre>{{ execOutput }}</pre>
       </section>
 
       <footer class="modal-card-foot p-2 pl-3">
-        <button class="button is-danger" @click="execOutput = null">Close</button>
+        <button class="button" :class="{
+          'is-success': isSuccessful,
+          'is-danger': !isSuccessful,
+        }" @click="execOutput = null">
+          Close
+        </button>
       </footer>
     </div>
   </div>

@@ -10,6 +10,7 @@ import AntiIntroSlide from './slides/AntiIntro.vue';
 // Validation
 import AssumptionsValidationSlide from './slides/AssumptionsValidation.vue';
 import InputOutputPractical from './practical/InputValidationPractical.vue';
+import InputValidationSolution from './slides/InputValidationSolution.vue';
 
 import AssumptionsEnvironmentalSlide from './slides/AssumptionsEnvironmental.vue';
 
@@ -29,6 +30,7 @@ const slides = [
 
     AssumptionsValidationSlide,
     InputOutputPractical,
+    InputValidationSolution,
 
     AssumptionsEnvironmentalSlide,
 
@@ -61,7 +63,14 @@ onMounted(() => {
 <template>
     <div class="slide-container">
         <component :is="slides[currentSlide]"></component>
-        <progress class="presentation-progress progress is-small is-info" :value="progressPercentage" max="100">{{ progressPercentage }}%</progress>
+
+        <div class="progress-container">
+            <div class="progress-controls">
+                <button class="button is-small" @click="currentSlide = Math.max(0, currentSlide - 1)">&lt;</button>
+                <button class="button is-small" @click="currentSlide = Math.min(slides.length - 1, currentSlide + 1)">&gt;</button>
+            </div>
+            <progress class="presentation-progress progress is-small is-info" :value="progressPercentage" max="100">{{ progressPercentage }}%</progress>
+        </div>
     </div>
 </template>
 
@@ -72,11 +81,24 @@ onMounted(() => {
         min-height: 100dvh;
     }
 
-    .presentation-progress {
+    .progress-container {
+        display: flex;
+        align-items: center;
+        align-self: center;
+
+        gap: 1rem;
+
         margin-top: auto;
         margin-block: 1.5rem;
         width: 70%;
+    }
+
+    .progress-controls {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .presentation-progress {
         height: 6px !important;
-        align-self: center;
     }
 </style>

@@ -20,6 +20,10 @@ in.close();
     <Slide :title="'Assumption 2: Environmental'">
         <CodeBlock :code="code" />
 
+        <p>
+            Do we know the environment in which our application will run?
+        </p>
+
         <section>
             <h3 class="is-size-6">Have you made any assumptions about where you app will be running?</h3>
             <ul>

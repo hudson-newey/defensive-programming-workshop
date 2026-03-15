@@ -13,13 +13,19 @@ import InputValidationExample from './slides/InputValidationExample.vue';
 import InputOutputPractical from './practical/InputValidationPractical.vue';
 import InputValidationSolution from './slides/InputValidationSolution.vue';
 
-import AssumptionsEnvironmentalSlide from './slides/AssumptionsEnvironmental.vue';
+// "Users" are relative
+import UsersAreRelativeSlide from './slides/UsersAreRelative.vue';
+import DeveloperInput from './slides/DeveloperInput.vue';
+import DeveloperInputExample from './slides/DeveloperInputExample.vue';
+import DeveloperInputPractical from './practical/DeveloperInputPractical.vue';
 
 // Side effects
 import AssumptionsSideEffectsSlide from './slides/AssumptionsSideEffects.vue';
 import SideEffectsExample from './slides/SideEffectsExample.vue';
 import DefensiveCopyingSlide from './slides/DefensiveCopying.vue';
-import SideEffectPractical from './practical/SideEffectPractical.vue';
+import ImmutabilitySlide from './slides/Immutability.vue';
+import GettersPractical from './practical/GettersPractical.vue';
+import InternalMutationPractical from './practical/InternalMutation.vue';
 
 import endSlide from './slides/EndSlide.vue';
 
@@ -34,12 +40,17 @@ const slides = [
     InputOutputPractical,
     InputValidationSolution,
 
-    AssumptionsEnvironmentalSlide,
+    UsersAreRelativeSlide,
+    DeveloperInput,
+    DeveloperInputExample,
+    DeveloperInputPractical,
 
     AssumptionsSideEffectsSlide,
-    SideEffectsExample,
     DefensiveCopyingSlide,
-    SideEffectPractical,
+    ImmutabilitySlide,
+    SideEffectsExample,
+    InternalMutationPractical,
+    GettersPractical,
 
     endSlide,
 ]

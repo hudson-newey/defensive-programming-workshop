@@ -3,19 +3,24 @@ import CodeBlock from '../CodeBlock.vue';
 import Slide from '../Slide.vue';
 
 const code = `
-public class User {
-    private String name;
-    private int age;
+public class StudentVulnerable {
+    private final List<Integer> grades;
+
+    public StudentVulnerable(List<Integer> grades) {
+        // VULNERABLE: Stores the reference to the external list
+        this.grades = grades;
+    }
+
+    public List<Integer> getGrades() {
+        // VULNERABLE: Returns the direct reference
+        return grades;
+    }
 }
-`;
+`
 </script>
 
 <template>
-    <Slide :title="'Assumption 3: Side Effects'">
+    <Slide :title="'Side Effects'">
         <CodeBlock :code="code" />
     </Slide>
 </template>
-
-
-
-

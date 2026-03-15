@@ -1,35 +1,39 @@
 <script setup lang="ts">
 import CodeBlock from '../CodeBlock.vue';
+import Image from '../Image.vue';
 import Slide from '../Slide.vue';
 import Step from '../Step.vue';
 
 const tryCatchCode = `
 try {
-    // some code that might throw an exception
+    System.out.println("Hello, World!");
 } catch (Exception e) {
-    System.out.println("An error occurred: " + e.getMessage());
+    // There may not be an IO device connected to print to.
+    panic("Unexpected error: " + e.getMessage());
 }
 `;
+
+const defaultValueCode = `
+function getUserName(user) {
+    return user.name || "Default User";
+}`;
 </script>
 
 <template>
     <Slide :title="'What is NOT Defensive Programming?'">
-        <p>
-            These are the quickest ways to make everyone hate your code.
-        </p>
-
-        <ul>
-            <li>Adding <code>try {} catch () {}</code> blocks everywhere</li>
-            <li>Useless <code>try {} catch () {}</code> blocks</li>
-            <li>Using <code>assert</code> guards at the start of every function/method</li>
-            <li>Being paranoid about 1/10m events like cosmic bit flips</li>
-            <li>Not following established coding practices and conventions</li>
-        </ul>
+        <section>
+            <h3 class="is-size-6">1. Adding <code>try {} catch () {}</code> blocks everywhere</h3>
+            <CodeBlock :code="tryCatchCode" />
+        </section>
 
         <Step :step="1">
-            <div class="mt-6">
-                <CodeBlock :code="tryCatchCode" />
-            </div>
+            <h3 class="is-size-6">2. Providing default values everywhere</h3>
+            <CodeBlock :code="defaultValueCode" />
+        </Step>
+
+        <Step :step="2">
+            <h3 class="is-size-6">3. Being paranoid about 1/10m events like cosmic bit flips</h3>
+            <Image src="/cosmic_bits.webp" :width="400" :height="400" />
         </Step>
     </Slide>
 </template>

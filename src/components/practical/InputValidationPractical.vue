@@ -59,7 +59,7 @@ class Main {
 </script>
 
 <template>
-    <Slide :title="'Practical: Input Validation'">
+    <Slide :title="'Input Validation: Practical'">
         <CodeEditor
 			:code="code"
 			:inputs="testInputs"

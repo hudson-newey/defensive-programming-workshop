@@ -22,7 +22,7 @@ Exception in thread "main" java.util.InputMismatchException
 </script>
 
 <template>
-    <Slide :title="'Assumption 1: Correct IO'">
+    <Slide :title="'Input Validation'">
         <CodeBlock :code="code" :link="codeLink" />
 
         <p>We have assumed that the user will input a valid integer.</p>

@@ -6,6 +6,8 @@ import Step from '../Step.vue';
 <template>
     <Slide :title="'What is Defensive Programming'">
         <ol>
+            <li>What can go wrong?</li>
+            <li>What assumptions do we make?</li>
             <li>Can these assumptions ever change</li>
             <li>What should happen if these assumptions are violated</li>
             <li>Is there a way that I can track assumptions violations (not covered)</li>

@@ -1,14 +1,26 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 
 import Slide1 from './slides/1Slide.vue';
 import Slide2 from './slides/2Slide.vue';
 import Slide3 from './slides/3Slide.vue';
+import Slide4 from './slides/4Slide.vue';
+import Slide5 from './slides/5Slide.vue';
 import endSlide from './slides/endSlide.vue';
 
-const slides = [Slide1, Slide2, Slide3, endSlide]
+const slides = [
+    Slide1,
+    Slide2,
+    Slide3,
+    Slide4,
+    Slide5,
+    endSlide,
+]
 
 const currentSlide = ref(0)
+const progressPercentage = computed(() => {
+    return ((currentSlide.value) / (slides.length - 1)) * 100
+})
 
 onMounted(() => {
     document.addEventListener('keydown', (event) => {
@@ -24,8 +36,24 @@ onMounted(() => {
 </script>
 
 <template>
-    <component :is="slides[currentSlide]"></component>
+    <div class="slide-container">
+        <component :is="slides[currentSlide]"></component>
+        <progress class="presentation-progress progress is-small is-info" :value="progressPercentage" max="100">{{ progressPercentage }}%</progress>
+    </div>
 </template>
 
-<style>
+<style scoped>
+    .slide-container {
+        display: flex;
+        flex-direction: column;
+        height: 100dvh;
+    }
+
+    .presentation-progress {
+        margin-top: auto;
+        margin-bottom: 1rem;
+        width: 70%;
+        height: 6px !important;
+        align-self: center;
+    }
 </style>

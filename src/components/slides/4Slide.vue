@@ -9,7 +9,7 @@
 </script>
 
 <template>
-    <Slide :title="'Assumption 1: Validation'">
+    <Slide :title="'Assumption 2: Environmental'">
         <h2>
             <CodeBlock :code="code" />
         </h2>

@@ -4,14 +4,19 @@ import { EventKeys } from '../constants/eventKeys'
 
 // Intro
 import TitleSlide from './slides/TitleSlide.vue'
+import WorkshopOverview from './slides/WorkshopOverview.vue'
 import IntroSlide from './slides/Intro.vue'
 import AntiIntroSlide from './slides/AntiIntro.vue'
+import OffensiveProgramming from './slides/OffensiveProgramming.vue'
 
 // Validation
 import AssumptionsValidationSlide from './slides/AssumptionsValidation.vue'
 import InputValidationExample from './slides/InputValidationExample.vue'
 import InputOutputPractical from './practical/InputValidationPractical.vue'
 import InputValidationSolution from './slides/InputValidationSolution.vue'
+
+// Graceful degradation
+import GracefulDegradation from './slides/GracefulDegradation.vue'
 
 // "Users" are relative
 import UsersAreRelativeSlide from './slides/UsersAreRelative.vue'
@@ -32,6 +37,7 @@ import endSlide from './slides/EndSlide.vue'
 const slides = [
     TitleSlide,
 
+    WorkshopOverview,
     IntroSlide,
     AntiIntroSlide,
 
@@ -39,6 +45,10 @@ const slides = [
     InputValidationExample,
     InputOutputPractical,
     InputValidationSolution,
+
+    GracefulDegradation,
+
+    OffensiveProgramming,
 
     UsersAreRelativeSlide,
     DeveloperInput,

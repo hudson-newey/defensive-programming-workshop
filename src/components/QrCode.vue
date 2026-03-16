@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import VueQrcode from '@chenfengyuan/vue-qrcode'
+
 const { src } = defineProps({
   src: {
     type: String,
@@ -7,12 +9,15 @@ const { src } = defineProps({
 })
 
 // remove the http:// or https:// from the src for better QR code readability
-const trimmedSrc = src.replace(/^https?:\/\//, '')
+// also remove trailing slash if present
+const trimmedSrc = src
+  .replace(/^https?:\/\//, '')
+  .replace(/\/$/, '')
 </script>
 
 <template>
-  <div>
-    <vue-qrcode :value="src"></vue-qrcode>
-    <a :href="src">{{ trimmedSrc }}</a>
+  <div class="is-flex is-flex-direction-column">
+    <a class="is-block is-size-4" :href="src" target="_blank">{{ trimmedSrc }}</a>
+    <VueQrcode :value="src" />
   </div>
 </template>

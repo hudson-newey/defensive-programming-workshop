@@ -6,30 +6,27 @@ import Step from '../Step.vue'
 <template>
     <Slide :title="'What is Defensive Programming'">
         <ol>
-            <li>What can go wrong?</li>
-            <li>What assumptions do we make?</li>
-            <li>Can these assumptions ever change</li>
-            <li>What should happen if these assumptions are violated</li>
-            <li>Is there a way that I can track assumptions violations (not covered)</li>
+            <Step :step="1">
+                <li>What can go wrong?</li>
+            </Step>
+            <Step :step="2">
+                <li>What assumptions do we make?</li>
+            </Step>
+            <Step :step="3">
+                <li>Can these assumptions ever change</li>
+            </Step>
+            <Step :step="4">
+                <li>What should happen if these assumptions are violated</li>
+            </Step>
+            <Step :step="5">
+                <li>Is there a way that I can track assumptions violations (not covered)</li>
+            </Step>
         </ol>
 
-        <Step :step="1">
+        <Step :step="6">
             <section class="mt-4">
                 <h4>Murphy's Law</h4>
                 <blockquote>Anything that can go wrong will go wrong</blockquote>
-            </section>
-        </Step>
-
-        <Step :step="2">
-            <section class="mt-6">
-                <h3>Workshop Overview</h3>
-                <ol>
-                    <li>What assumptions do we make?</li>
-                    <ul>
-                        <li>We assume that input data will be valid</li>
-                        <li>We assume that external systems will behave as expected</li>
-                    </ul>
-                </ol>
             </section>
         </Step>
     </Slide>

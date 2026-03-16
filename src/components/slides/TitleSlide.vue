@@ -26,6 +26,13 @@ $ git clone https://github.com/hudson-newey/defensive-exercises.git
             <CodeBlock :lang="'bash'" :code="cloneRepoCommand" />
         </section>
 
-        <Image src="/bubble-wrapped.webp" :width="400" :height="400" />
+        <div class="columns">
+            <Image class="column" src="/bubble-wrapped.webp" :width="400" :height="400" />
+            <div class="column">
+                <a class="is-size-4" href="https://defensive-coding-workshop.netlify.app" target="_blank">
+                    defensive-coding-workshop.netlify.app
+                </a>
+            </div>
+        </div>
     </Slide>
 </template>

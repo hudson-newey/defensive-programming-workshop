@@ -12,7 +12,7 @@ import Step from '../Step.vue'
         </p>
 
         <Step :step="1">
-            <p class="has-text-white">
+            <p class="has-text-weight-semibold">
                 Your users are probably other developers.
             </p>
 

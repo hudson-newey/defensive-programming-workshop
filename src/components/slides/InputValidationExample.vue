@@ -28,7 +28,7 @@ ResultSet rs = stmt.executeQuery(query);
         <CodeBlock :code="vulnerableSqlCode" />
 
         <Step :step="1">
-            <p class="has-text-white">Do you see the issue?</p>
+            <p class="has-text-weight-semibold">Do you see the issue?</p>
         </Step>
     </Slide>
 </template>

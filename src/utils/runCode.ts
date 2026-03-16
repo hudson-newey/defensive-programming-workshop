@@ -5,9 +5,15 @@ interface TioResponse {
     exitCode?: number;
 }
 
+interface RunOptions {
+    input?: string;
+    args?: string | string[];
+    flags?: string | string[];
+}
+
 export async function runCode(code: string, inputs: string): Promise<TioResponse> {
     return await run(code, 'java-openjdk', {
-        inputs: inputs,
+        input: inputs,
     })
 }
 
@@ -16,9 +22,9 @@ const API_URL = 'https://tio.run/cgi-bin/run/api/';
 /**
  * @param {string} code
  * @param {string} language
- * @param {Record<string, unknown>} options
+ * @param {RunOptions} options
  */
-async function run(code: string, language: string, options: Record<string, unknown> = {}) {
+async function run(code: string, language: string, options: RunOptions = {}) {
     let files: any = { ".code.tio": String(code) };
     let variables: any = { "lang": language };
 

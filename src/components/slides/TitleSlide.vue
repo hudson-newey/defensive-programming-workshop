@@ -27,9 +27,9 @@ $ git clone https://github.com/hudson-newey/defensive-exercises.git
         </section>
 
         <div class="columns">
-            <Image class="column" src="/bubble-wrapped.webp" :width="400" :height="400" />
+            <Image class="column" src="/bubble-wrapped.webp" alt="Bubble wrap illustrating protective defensive programming" :width="400" :height="400" />
             <div class="column">
-                <a class="is-size-4" href="https://defensive-coding-workshop.netlify.app" target="_blank">
+                <a class="is-size-4 has-text-white" href="https://defensive-coding-workshop.netlify.app" target="_blank" rel="noopener noreferrer">
                     defensive-coding-workshop.netlify.app
                 </a>
             </div>

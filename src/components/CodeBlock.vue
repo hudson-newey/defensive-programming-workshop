@@ -21,7 +21,7 @@ defineProps({
 <template>
     <div class="mb-3">
         <VCodeBlock :code="code.trim()" :lang="lang" highlightjs theme="github-dark-dimmed" />
-        <a v-if="link" :href="link" target="_blank" class="button is-small mt-3">
+        <a v-if="link" :href="link" target="_blank" rel="noopener noreferrer" class="button is-small mt-3">
             View on TIO
         </a>
     </div>

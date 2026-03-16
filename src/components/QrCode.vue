@@ -17,7 +17,7 @@ const trimmedSrc = src
 
 <template>
   <div class="is-flex is-flex-direction-column">
-    <a class="is-block is-size-4" :href="src" target="_blank">{{ trimmedSrc }}</a>
+    <a class="is-block is-size-4" :href="src" target="_blank" rel="noopener noreferrer">{{ trimmedSrc }}</a>
     <VueQrcode :value="src" />
   </div>
 </template>

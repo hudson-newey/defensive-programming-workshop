@@ -10,12 +10,12 @@ defineProps({
     default: ''
   },
   width: {
-    type: Number,
+    type: [Number, String],
     required: false,
     default: 'auto'
   },
   height: {
-    type: Number,
+    type: [Number, String],
     required: false,
     default: 'auto'
   }

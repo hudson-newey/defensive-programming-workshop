@@ -35,7 +35,6 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-    console.log('Removing keydown listener')
     if (keydownListener) {
         document.body.removeEventListener('keydown', keydownListener)
     }

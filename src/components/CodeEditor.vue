@@ -66,7 +66,7 @@ function checkCode() {
       execExitCode.value = response.exitCode ?? null
     })
     .catch((error) => {
-      execOutput.value = `Error: ${error.message}`
+      execOutput.value = `Unable to run the exercise right now. ${error.message}`
       execExitCode.value = null
     })
     .finally(() => {

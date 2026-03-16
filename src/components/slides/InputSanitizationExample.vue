@@ -5,9 +5,10 @@ import Step from '../Step.vue'
 
 // Example of code that is vulnerable to SQL injection.
 const vulnerableSqlCode = `
-// Assuming that these TUI method helpers do not perform any input validation or
-// sanitization.
+System.out.print("Username:");
 String username = TUI.getInput();
+
+System.out.print("Password:");
 String password = TUI.getInput();
 
 String query = new StringBuilder()
@@ -21,14 +22,21 @@ String query = new StringBuilder()
 Statement stmt = connection.createStatement();
 ResultSet rs = stmt.executeQuery(query);
 `
+
+const exampleExploitInput = `
+Username: ' OR '1'='1
+Password: ' OR '1'='1
+`;
 </script>
 
 <template>
-    <Slide :title="'Input Validation: SQL Injection'">
+    <Slide :title="'Input Validation / sanitization: SQL Injection'">
+        <p class="has-text-weight-semibold">Can you spot the issue?</p>
+
         <CodeBlock :code="vulnerableSqlCode" />
 
         <Step :step="1">
-            <p class="has-text-weight-semibold">Do you see the issue?</p>
+            <CodeBlock :code="exampleExploitInput" />
         </Step>
     </Slide>
 </template>

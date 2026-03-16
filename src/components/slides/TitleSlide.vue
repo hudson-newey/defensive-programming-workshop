@@ -23,13 +23,20 @@ $ git clone https://github.com/hudson-newey/defensive-exercises.git
                 exercises after the workshop.
             </p>
 
-            <CodeBlock :lang="'bash'" :code="cloneRepoCommand" />
+            <section class="mt-4 mb-4">
+                <h4>Murphy's Law</h4>
+                <blockquote>Anything that can go wrong will go wrong</blockquote>
+            </section>
+
+            <!-- <CodeBlock :lang="'bash'" :code="cloneRepoCommand" /> -->
         </section>
 
         <div class="columns">
-            <Image class="column" src="/bubble-wrapped.webp" alt="Bubble wrap illustrating protective defensive programming" :width="400" :height="400" />
+            <Image class="column" src="/bubble-wrapped.webp"
+                alt="Bubble wrap illustrating protective defensive programming" :width="400" :height="400" />
             <div class="column">
-                <a class="is-size-4 has-text-white" href="https://defensive-coding-workshop.netlify.app" target="_blank" rel="noopener noreferrer">
+                <a class="is-size-4 has-text-white" href="https://defensive-coding-workshop.netlify.app" target="_blank"
+                    rel="noopener noreferrer">
                     defensive-coding-workshop.netlify.app
                 </a>
             </div>

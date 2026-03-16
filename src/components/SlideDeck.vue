@@ -11,13 +11,13 @@ import OffensiveProgramming from './slides/OffensiveProgramming.vue'
 
 // Validation
 import AssumptionsValidationSlide from './slides/AssumptionsValidation.vue'
-import InputValidationExample from './slides/InputValidationExample.vue'
+import InputSanitizationExample from './slides/InputSanitizationExample.vue'
 import InputOutputPractical from './practical/InputValidationPractical.vue'
 import InputValidationSolution from './slides/InputValidationSolution.vue'
 
 // Graceful degradation
 import GracefulDegradation from './slides/GracefulDegradation.vue'
-import AssumptionsEnvironmentalSlide from './slides/AssumptionsEnvironmental.vue'
+import GracefulVideos from './slides/GracefulVideos.vue'
 import GracefulDegradationExample from './slides/GracefulDegradationExample.vue'
 import GracefulDegradationPractical from './practical/GracefulDegradationPractical.vue'
 import GracefulDegradationSolution from './slides/GracefulDegradationSolution.vue'
@@ -55,13 +55,14 @@ const slides: SlideDefinition[] = [
     { title: 'Anti-Patterns', section: 'Intro', component: AntiIntroSlide },
 
     { title: 'Assumption: Validation', section: 'Validation', component: AssumptionsValidationSlide },
-    { title: 'Input Validation Example', section: 'Validation', component: InputValidationExample },
+    { title: 'Input Validation Example', section: 'Validation', component: InputSanitizationExample },
     { title: 'Input Validation Practical', section: 'Validation', component: InputOutputPractical },
     { title: 'Input Validation Solution', section: 'Validation', component: InputValidationSolution },
 
     { title: 'Graceful Degradation', section: 'Graceful degradation', component: GracefulDegradation },
     // { title: 'Assumption: Environmental', section: 'Graceful degradation', component: AssumptionsEnvironmentalSlide },
-    { title: 'Graceful Degradation Example', section: 'Graceful degradation', component: GracefulDegradationExample },
+    { title: 'Graceful Degradation Example (Videos)', section: 'Graceful degradation', component: GracefulVideos },
+    { title: 'Graceful Degradation Example (Env Vars)', section: 'Graceful degradation', component: GracefulDegradationExample },
     { title: 'Graceful Degradation Practical', section: 'Graceful degradation', component: GracefulDegradationPractical },
     { title: 'Graceful Degradation Solution', section: 'Graceful degradation', component: GracefulDegradationSolution },
 

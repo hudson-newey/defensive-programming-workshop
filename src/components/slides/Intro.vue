@@ -5,11 +5,6 @@ import Step from '../Step.vue'
 
 <template>
     <Slide :title="'What is Defensive Programming'">
-        <section class="mt-4">
-            <h4>Murphy's Law</h4>
-            <blockquote>Anything that can go wrong will go wrong</blockquote>
-        </section>
-
         <ol>
             <Step :step="1">
                 <li>What can go wrong?</li>

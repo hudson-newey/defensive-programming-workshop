@@ -4,7 +4,10 @@ import Slide from '../Slide.vue'
 
 <template>
     <Slide :title="'Workshop Overview'">
-        <p>I'll be following a predictable structure for this workshop</p>
+        <p>
+            This workshop will have three examples following a predictable
+            structure.
+        </p>
 
         <ol>
             <li>Describe an assumption</li>

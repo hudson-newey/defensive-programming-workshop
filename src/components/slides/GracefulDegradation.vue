@@ -5,19 +5,27 @@ import Step from '../Step.vue';
 
 <template>
     <Slide :title="'Graceful Degradation'">
-        <p>Graceful degradation means refusing to continue with invalid or unsafe state and returning a useful error or
-            fallback.</p>
+        <p>
+            Isolate failures to the smallest possible scope and degrade
+            gracefully instead of crashing the whole app.
+        </p>
+
+        <section class="mt-3">
+            <h3 class="is-size-6">Isolate Failures on Boundaries</h3>
+            <ul>
+                <li>Keep parsing, validation, and error handling close to the API, file, or browser edge.</li>
+                <li>Convert external failures into safe internal values before the rest of the app uses them.</li>
+                <li>Contain the blast radius so one bad response breaks one feature, not the whole screen.</li>
+                <li>Make boundary failures visible with logs, metrics, or messages instead of hiding them.</li>
+            </ul>
+        </section>
 
         <section class="mt-6">
             <h3 class="is-size-6">Handle external boundary problems gracefully</h3>
             <ul>
-                <li>Treat APIs, files, environment variables, and browsers as unreliable boundaries.</li>
+                <li>Treat APIs, files, environment variables, and browsers as unreliable inputs.</li>
                 <li>Validate what came in before the rest of the app depends on it.</li>
                 <li>Return a safe fallback, retry option, or clear error message when the boundary fails.</li>
-                <li><strong>Example:</strong> If <code>APP_MODE</code> is missing, start in <code>DEV</code> instead of
-                    crashing on boot.</li>
-                <li><strong>Example:</strong> If an API request times out, show cached data with an “offline” message
-                    instead of a blank screen.</li>
             </ul>
         </section>
 
@@ -30,8 +38,6 @@ import Step from '../Step.vue';
                     <li>Log or surface enough detail so developers can diagnose why the fallback happened.</li>
                     <li><strong>Example:</strong> Render a placeholder avatar when an image URL is broken instead of
                         leaving a broken UI element.</li>
-                    <li><strong>Example:</strong> Disable a feature with a message like “Export unavailable for guest
-                        users” instead of letting it fail halfway through.</li>
                 </ul>
             </section>
 

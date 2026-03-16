@@ -5,6 +5,8 @@ import { EventKeys } from '../constants/eventKeys'
 // Intro
 import TitleSlide from './slides/TitleSlide.vue'
 import WorkshopOverview from './slides/WorkshopOverview.vue'
+import WhyDefensiveProgramming from './slides/WhyDefensiveProgramming.vue'
+import WhyDefensiveProgrammingLocal from './slides/WhyDefensiveProgrammingLocal.vue'
 import IntroSlide from './slides/Intro.vue'
 import AntiIntroSlide from './slides/AntiIntro.vue'
 import OffensiveProgramming from './slides/OffensiveProgramming.vue'
@@ -52,6 +54,8 @@ const slides: SlideDefinition[] = [
     { title: 'Defensive Programming', section: 'Intro', component: TitleSlide },
     { title: 'Workshop Overview', section: 'Intro', component: WorkshopOverview },
     { title: 'Why Defensive Programming?', section: 'Intro', component: IntroSlide },
+    { title: 'Real Life Example', section: 'Intro', component: WhyDefensiveProgramming },
+    { title: 'Close to Home', section: 'Intro', component: WhyDefensiveProgrammingLocal },
     { title: 'Anti-Patterns', section: 'Intro', component: AntiIntroSlide },
 
     { title: 'Assumption: Validation', section: 'Validation', component: AssumptionsValidationSlide },

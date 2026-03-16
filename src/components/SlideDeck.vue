@@ -17,18 +17,23 @@ import InputValidationSolution from './slides/InputValidationSolution.vue'
 
 // Graceful degradation
 import GracefulDegradation from './slides/GracefulDegradation.vue'
+import GracefulDegradationExample from './slides/GracefulDegradationExample.vue'
+import GracefulDegradationPractical from './practical/GracefulDegradationPractical.vue'
+import GracefulDegradationSolution from './slides/GracefulDegradationSolution.vue'
 
 // "Users" are relative
 import UsersAreRelativeSlide from './slides/UsersAreRelative.vue'
 import DeveloperInput from './slides/DeveloperInput.vue'
 import DeveloperInputExample from './slides/DeveloperInputExample.vue'
 import DeveloperInputPractical from './practical/DeveloperInputPractical.vue'
+import DeveloperInputSolution from './slides/DeveloperInputSolution.vue'
 
 // Side effects
 import AssumptionsSideEffectsSlide from './slides/AssumptionsSideEffects.vue'
 import SideEffectsExample from './slides/SideEffectsExample.vue'
 import DefensiveCopyingSlide from './slides/DefensiveCopying.vue'
 import ImmutabilitySlide from './slides/Immutability.vue'
+import SideEffectsSolution from './slides/SideEffectsSolution.vue'
 import GettersPractical from './practical/GettersPractical.vue'
 import InternalMutationPractical from './practical/InternalMutation.vue'
 
@@ -47,6 +52,9 @@ const slides = [
     InputValidationSolution,
 
     GracefulDegradation,
+    GracefulDegradationExample,
+    GracefulDegradationPractical,
+    GracefulDegradationSolution,
 
     OffensiveProgramming,
 
@@ -54,11 +62,13 @@ const slides = [
     DeveloperInput,
     DeveloperInputExample,
     DeveloperInputPractical,
+    DeveloperInputSolution,
 
     AssumptionsSideEffectsSlide,
+    SideEffectsExample,
     DefensiveCopyingSlide,
     ImmutabilitySlide,
-    SideEffectsExample,
+    SideEffectsSolution,
     InternalMutationPractical,
     GettersPractical,
 

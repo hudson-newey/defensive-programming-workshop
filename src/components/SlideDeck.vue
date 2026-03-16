@@ -37,6 +37,7 @@ import SideEffectsSolution from './slides/SideEffectsSolution.vue'
 import GettersPractical from './practical/GettersPractical.vue'
 import GettersSolution from './slides/GettersSolution.vue'
 import InternalMutationPractical from './practical/InternalMutationPractical.vue'
+import InternalMutationSolution from './slides/InternalMutationSolution.vue'
 
 import endSlide from './slides/EndSlide.vue'
 
@@ -70,7 +71,10 @@ const slides = [
     DefensiveCopyingSlide,
     ImmutabilitySlide,
     SideEffectsSolution,
+
     InternalMutationPractical,
+    InternalMutationSolution,
+
     GettersPractical,
     GettersSolution,
 

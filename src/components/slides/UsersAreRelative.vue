@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Image from '../Image.vue';
 import Slide from '../Slide.vue'
 import Step from '../Step.vue'
 </script>
@@ -14,6 +15,8 @@ import Step from '../Step.vue'
             <p class="has-text-white">
                 Your users are probably other developers.
             </p>
+
+            <Image src="/you-you-you-meme.webp" />
         </Step>
     </Slide>
 </template>

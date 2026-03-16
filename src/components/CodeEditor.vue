@@ -3,7 +3,7 @@ import { computed, onMounted, onUnmounted, ref, type Ref } from 'vue'
 import { CodeEditor } from 'monaco-editor-vue3'
 import { runCode } from '../utils/runCode'
 
-const { code, inputs, solution } = defineProps({
+const { code, inputs, solution, testHarness } = defineProps({
   code: {
     type: String,
     required: true
@@ -17,6 +17,16 @@ const { code, inputs, solution } = defineProps({
     type: Array as () => string[],
     required: false,
     default: () => []
+  },
+  /**
+   * A block of code that will be injected after the users code.
+   * It is used to run test cases against the users code without them being able
+   * to see it or modify it.
+   */
+  testHarness: {
+    type: String,
+    required: false,
+    default: ''
   }
 })
 
@@ -50,7 +60,7 @@ let keyupListener = (event: KeyboardEvent) => {
 
 function checkCode() {
   isSubmitting.value = true
-  runCode(editedCode.value, inputs.join('\n') + '\n')
+  runCode(editedCode.value + '\n' + testHarness, inputs.join('\n') + '\n')
     .then((response) => {
       execOutput.value = response.output
       execExitCode.value = response.exitCode ?? null

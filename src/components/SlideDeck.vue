@@ -35,7 +35,7 @@ import DefensiveCopyingSlide from './slides/DefensiveCopying.vue'
 import ImmutabilitySlide from './slides/Immutability.vue'
 import SideEffectsSolution from './slides/SideEffectsSolution.vue'
 import GettersPractical from './practical/GettersPractical.vue'
-import InternalMutationPractical from './practical/InternalMutation.vue'
+import InternalMutationPractical from './practical/InternalMutationPractical.vue'
 
 import endSlide from './slides/EndSlide.vue'
 
